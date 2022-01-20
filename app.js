@@ -5,16 +5,23 @@ function mergeArrays(a, b) {
 }
 
 // solution 2
+const _ = require('lodash');
+
+function mergeArrays(arr1, arr2) {
+  return _.sortBy(_.union(arr1, arr2));
+}
 
 
 // solution 3
 
-
+let mergeArrays = (a, b) => [...new Set([...a, ...b])].sort((a,b)=> a-b)
 // solution 4
- 
+function mergeArrays(arr1, arr2) {
+  return Array.from(new Set([...arr1,...arr2])).sort((a,b)=>a-b);
+}
 
 // solution 5
- 
+const mergeArrays = (arr1, arr2) => arr1.concat(arr2.filter((item) => arr1.indexOf(item) <0)).sort(function(a, b){return a-b});
  // solution 6
  arr1 = [1, 2, 3, 4, 5];
  arr2 = [6, 7, 8, 9, 10];
